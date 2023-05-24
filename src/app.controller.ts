@@ -1,6 +1,6 @@
-import { Controller, UseFilters } from '@nestjs/common';
-import { TypedBody, TypedRoute } from '@nestia/core';
-import { CommonExceptionFilter } from './common.exception-filter';
+import { Controller, UseFilters } from "@nestjs/common";
+import { TypedBody, TypedRoute } from "@nestia/core";
+import { CommonExceptionFilter } from "./common.exception-filter";
 
 export interface TestInput {
   /**
@@ -20,7 +20,7 @@ export class AppController {
   @TypedRoute.Post()
   index(@TypedBody() data: TestInput) {
     return {
-      data
-    }
+      data,
+    };
   }
 }

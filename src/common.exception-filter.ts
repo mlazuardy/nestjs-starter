@@ -1,4 +1,9 @@
-import { ArgumentsHost, BadRequestException, Catch, ExceptionFilter } from "@nestjs/common";
+import {
+  ArgumentsHost,
+  BadRequestException,
+  Catch,
+  ExceptionFilter,
+} from "@nestjs/common";
 import { Response } from "express";
 
 @Catch(BadRequestException)
@@ -9,8 +14,8 @@ export class CommonExceptionFilter implements ExceptionFilter {
     const status = exception.getStatus();
 
     const json: Record<string, any> = {
-      statusCode: status
-    }
+      statusCode: status,
+    };
 
     if (typeof errResponse === "object" && errResponse.errors?.length) {
       json.errors = errResponse.errors;
