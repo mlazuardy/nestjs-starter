@@ -20,6 +20,8 @@ export interface TestInput {
 export class AppController {
   @TypedRoute.Post()
   index(@TypedBody({ type: "validate", validate: createValidate<TestInput>() }) data: TestInput) {
-    return data
+    return {
+      data
+    }
   }
 }
