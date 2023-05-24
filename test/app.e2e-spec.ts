@@ -20,7 +20,7 @@ describe("AppController (e2e)", () => {
       .post("/tokens")
       .then((res) => {
         expect(res.status).toBe(201);
-        expect(res.body.superLongRandomString).toBeDefined();
+        expect(res.body.accessToken).toBeDefined();
       });
   });
 });
